@@ -64,13 +64,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 hintText: 'Enter C:',
               ),
             ),
-            TextButton(
-              style: TextButton.styleFrom(
-                primary: Colors.blue,
-              ),
+            RaisedButton(
+                color: Colors.red, // background
+                textColor: Colors.white, // foreground
               onPressed: () {
                 var content = "";
                 try {
+                  //calculating
                   var aNumber = double.parse(aField.text);
                   var bNumber = double.parse(bField.text);
                   var cNumber = double.parse(cField.text);
@@ -96,6 +96,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     );
                   },
                 );
+                aField.clear();
+                bField.clear();
+                cField.clear();
               },
               child: const Text('Calculate'),
             ),
