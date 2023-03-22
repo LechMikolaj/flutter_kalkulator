@@ -80,10 +80,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 hintText: 'Enter C:',
               ),
             ),
+            TextButton(
+              style: TextButton.styleFrom(
+                primary: Colors.blue,
+              ),
+              onPressed: () { },
+              child: Text('Calculate'),
+            ),
 
           ],
         ),
       ),
+
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           var content = "";
