@@ -1,16 +1,15 @@
 # flutter_kalkulator
 
-A new Flutter project.
+The  calculator which computes the zeros of a quadratic function.
 
-## Getting Started
+To run on your device  install IDE VS Code or Android Studio and then install flutter. 
 
-This project is a starting point for a Flutter application.
+Then build this app on your computer and run it in your browser, on your phone or computer.
 
-A few resources to get you started if this is your first Flutter project:
+How to run on your Android phone:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1 Build Apk on your computer using IDE: Build->Flutter->Build APK
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+2 Copy on your phone and install it
+
+
