@@ -41,28 +41,43 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text("y=Ax^2+Bx+C",style:TextStyle(fontSize:30)),
-
-            TextField(
-              controller: aField,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'Enter A:',
-              ),
-            ),
-            TextField(
-              controller: bField,
-              decoration: const InputDecoration(
-                border: const OutlineInputBorder(),
-                hintText: 'Enter B:',
-              ),
-            ),
-            TextField(
-              controller: cField,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'Enter C:',
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children:  <Widget>[
+                const Text("y="),
+                SizedBox(
+                  width:41,
+                  child:TextField(
+                    controller: aField,
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: 'A:',
+                    ),
+                  ),
+                ),
+                const Text("x^2+"),
+                SizedBox(
+                  width:41,
+                  child:TextField(
+                    controller: bField,
+                    decoration: const InputDecoration(
+                      border: const OutlineInputBorder(),
+                      hintText: 'B:',
+                    ),
+                  ),
+                ),
+                const Text("+"),
+                SizedBox(
+                  width:41,
+                  child:TextField(
+                    controller: cField,
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      hintText: 'C:',
+                    ),
+                  ),
+                ),
+              ],
             ),
             RaisedButton(
                 color: Colors.red, // background
