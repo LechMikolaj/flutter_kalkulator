@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kalkulator/quadraticFunc.dart';
+import 'package:flutter_kalkulator/rectangularTriangle.dart';
 
 void main() {
   runApp(
@@ -13,6 +14,7 @@ void main() {
         '/': (context) => const FirstScreen(),
         // When navigating to the "/second" route, build the SecondScreen widget.
         '/second': (context) => const QuadraticFunction(title: 'Quadratic Function'),
+        '/third': (context) => const RectangularTriangle(title: 'Rectangular Triangle'),
       },
     ),
   );
@@ -28,42 +30,30 @@ class FirstScreen extends StatelessWidget {
         title: const Text('Flutter Calculator'),
       ),
       body: Center(
-        child: ElevatedButton(
-          // Within the `FirstScreen` widget
-          onPressed: () {
-            // Navigate to the second screen using a named route.
-            Navigator.pushNamed(context, '/second');
-          },
-          child: const Text('Quadratic Function'),
-        ),
-      ),
-    );
+        child:Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+
+          children:<Widget>[
+              ElevatedButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/second');
+            },
+            child: const Text('Quadratic Function'),
+          ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/third');
+              },
+              child: const Text('Rectangular Triangle'),
+            ),
+        ]
+        )
+      ));
+
   }
 }
 
-class SecondScreen extends StatelessWidget {
-  const SecondScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Second Screen'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          // Within the SecondScreen widget
-          onPressed: () {
-            // Navigate back to the first screen by popping the current route
-            // off the stack.
-            Navigator.pop(context);
-          },
-          child: const Text('Go back!'),
-        ),
-      ),
-    );
-  }
-}
 
 
 // class QuadraticFunction extends StatefulWidget {
