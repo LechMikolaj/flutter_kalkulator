@@ -117,7 +117,6 @@ class _QuadraticFunctionState extends State<QuadraticFunction> {
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25),
                 ),
-
               ],
             ),
           ],
