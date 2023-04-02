@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
               children:  <Widget>[
                 const Text("y=", style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 30)),
                 SizedBox(
-                  width:45,
+                  width:80,
                   height:40,
                   child:TextField(
                     controller: aField,
@@ -67,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 const Text("x²+",style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 30)),
                 SizedBox(
-                  width:45,
+                  width:80,
                   height:40,
                   child:TextField(
                     controller: bField,
@@ -80,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 const Text("x+",style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 30)),
                 SizedBox(
-                  width:45,
+                  width:80,
                   height:40,
                   child:TextField(
                     controller: cField,
