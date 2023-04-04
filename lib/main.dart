@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_kalkulator/areaAndVolumeOfTheSphere.dart';
 import 'package:flutter_kalkulator/quadraticFunc.dart';
 import 'package:flutter_kalkulator/rectangularTriangle.dart';
 
@@ -15,6 +16,8 @@ void main() {
         // When navigating to the "/second" route, build the SecondScreen widget.
         '/second': (context) => const QuadraticFunction(title: 'Quadratic Function'),
         '/third': (context) => const RectangularTriangle(title: 'Rectangular Triangle'),
+        '/fourth': (context) => const AreaAndVolumeOfTheSphere(title: 'Area And Volume\n Of The Sphere'),
+
       },
     ),
   );
@@ -46,6 +49,12 @@ class FirstScreen extends StatelessWidget {
                 Navigator.pushNamed(context, '/third');
               },
               child: const Text('Rectangular Triangle'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/fourth');
+              },
+              child: const Text('Area And Volume\n Of The Sphere'),
             ),
         ]
         )

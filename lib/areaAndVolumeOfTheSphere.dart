@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-class RectangularTriangle extends StatefulWidget {
-  const RectangularTriangle({Key? key, required this.title}) : super(key: key);
+class AreaAndVolumeOfTheSphere extends StatefulWidget {
+  const AreaAndVolumeOfTheSphere({Key? key, required this.title}) : super(key: key);
   final String title;
   @override
-  State<RectangularTriangle> createState() => _QuadraticFunctionState();
+  State<AreaAndVolumeOfTheSphere> createState() => _AreaAndVolumeOfTheSphere();
 }
 final aField = TextEditingController();
 final bField = TextEditingController();
 final cField = TextEditingController();
 
-class _QuadraticFunctionState extends State<RectangularTriangle> {
+class _AreaAndVolumeOfTheSphere extends State<AreaAndVolumeOfTheSphere> {
   late String _content="";
   @override
   Widget build(BuildContext context) {
@@ -23,31 +23,19 @@ class _QuadraticFunctionState extends State<RectangularTriangle> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Image.asset('assets/images/rectangularTriagle.png'),
+            Image.asset('assets/images/ball.png'),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children:  <Widget>[
                 SizedBox(
-                  width:80,
+                  width:90,
                   height:40,
                   child:TextField(
                     controller: aField,
                     style: TextStyle(fontSize: 20, height: 2.3, color: Colors.black),
                     decoration: const InputDecoration(
                       border: OutlineInputBorder(),
-                      hintText: 'A:',
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width:80,
-                  height:40,
-                  child:TextField(
-                    controller: bField,
-                    style: TextStyle(fontSize: 20, height: 2.3, color: Colors.black),
-                    decoration: const InputDecoration(
-                      border: const OutlineInputBorder(),
-                      hintText: 'B:',
+                      hintText: 'R:(cm)',
                     ),
                   ),
                 ),
@@ -61,17 +49,14 @@ class _QuadraticFunctionState extends State<RectangularTriangle> {
                 try {
                   //calculating
                   var aNumber = double.parse(aField.text);
-                  var bNumber = double.parse(bField.text);
-                  num cNumber = 0.0;
-                  if (aNumber > 0 && bNumber> 0) {
-                    // ignore: prefer_interpolation_to_compose_strings
-                    cNumber=pow(aNumber*aNumber+bNumber*bNumber,1/2);
-                    var sinAlpha=aNumber/cNumber;
-                    var cosAlpha=bNumber/cNumber;
-                    var tanAlpha=aNumber/bNumber;
 
-                    content = "c="+cNumber.toString()+'\n'+"sin ALPHA="+sinAlpha.toString()
-                        +'\n'+"cos ALPHA="+cosAlpha.toString()+'\n'+"tan ALPHA="+tanAlpha.toString();
+                  if (aNumber > 0 ) {
+                    // ignore: prefer_interpolation_to_compose_strings
+                    var area=4*3.14*pow(aNumber,2);
+                    var volume=(4/3)*3.14*pow(aNumber,3);
+
+
+                    content = "Area="+ area.toString()+"cm^2"'\n'+"Volume="+ volume.toString()+"cm^3";
                     setState(()
                     {
                       _content = content;
@@ -93,8 +78,6 @@ class _QuadraticFunctionState extends State<RectangularTriangle> {
                   });
                 }
                 aField.clear();
-                bField.clear();
-                cField.clear();
               },
               child: const Text('Calculate'),
             ),
